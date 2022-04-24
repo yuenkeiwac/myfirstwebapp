@@ -20,7 +20,7 @@ if readme:
 
 option = st.sidebar.selectbox(
     'Select a mini project',
-     ['area chart', 'line chart','map', 'color picker', 'T n C','Long Process'])
+     ['area chart', 'line chart', 'bar chart', 'map', 'color picker', 'T n C','Long Process'])
 
 
 if option=='line chart':
