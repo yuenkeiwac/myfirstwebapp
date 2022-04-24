@@ -35,7 +35,13 @@ elif option=='area chart':
     np.random.randn(20, 3),
     columns=['a', 'b', 'c'])
     st.area_chart(chart_data)
-    
+
+elif option=='bar chart':
+    chart_data = pd.DataFrame(
+    np.random.randn(50, 3),
+    columns=["a", "b", "c"])
+    st.bar_chart(chart_data)
+ 
 elif option=='map':
     map_data = pd.DataFrame(
     np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
