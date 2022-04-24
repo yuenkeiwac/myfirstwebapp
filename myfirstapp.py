@@ -38,7 +38,7 @@ elif option=='area chart':
 
 elif option=='bar chart':
     chart_data = pd.DataFrame(
-    np.random.randn(50, 3),
+    np.random.randn(20, 3),
     columns=["a", "b", "c"])
     st.bar_chart(chart_data)
  
