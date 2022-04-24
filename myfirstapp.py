@@ -20,7 +20,7 @@ if readme:
 
 option = st.sidebar.selectbox(
     'Select a mini project',
-     ['line chart','map','T n C','Long Process'])
+     ['area chart', 'line chart','map', 'color picker', 'T n C','Long Process'])
 
 
 if option=='line chart':
@@ -30,6 +30,12 @@ if option=='line chart':
 
     st.line_chart(chart_data)
 
+elif option=='area chart':
+    chart_data = pd.DataFrame(
+    np.random.randn(20, 3),
+    columns=['a', 'b', 'c'])
+    st.area_chart(chart_data)
+    
 elif option=='map':
     map_data = pd.DataFrame(
     np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
@@ -37,6 +43,10 @@ elif option=='map':
 
     st.map(map_data)
 
+elif option=='color picker':
+    color = st.color_picker('Pick A Color', '#00f900')
+    st.write('The current color is', color)
+    
 elif option=='T n C':
 
     st.write('Before you continue, please read the [terms and conditions](https://www.gnu.org/licenses/gpl-3.0.en.html)')
