@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import time
 
-st.header("My first Python Web App")
+st.header("Chart")
 
 readme = st.checkbox("readme first")
 
