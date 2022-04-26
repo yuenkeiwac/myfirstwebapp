@@ -3,7 +3,7 @@ import re
 vad = SentimentIntensityAnalyzer()
 
 class Prediction():
-    def Compute_ENGWord_Sentiment(word):
+    def Compute_ENGWord_Sentiment(self, word):
         polarity_value = 0
 
         # Vader Lexicon
@@ -15,7 +15,7 @@ class Prediction():
 
         return polarity_value
 
-    def split_sentence(sent):
+    def split_sentence(self, sent):
         score = 0.0
         for word in sent.split():
             score += Compute_ENGWord_Sentiment(word)
