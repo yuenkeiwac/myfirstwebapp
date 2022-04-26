@@ -3,6 +3,7 @@ import re
 vad = SentimentIntensityAnalyzer()
 
 class Prediction():
+    
     def Compute_ENGWord_Sentiment(self, word):
         polarity_value = 0
 
@@ -18,5 +19,5 @@ class Prediction():
     def split_sentence(self, sent):
         score = 0.0
         for word in sent.split():
-            score += Compute_ENGWord_Sentiment(word)
+            score += self.Compute_ENGWord_Sentiment(word)
         return score
