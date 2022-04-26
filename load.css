@@ -3,14 +3,14 @@
   color: white;
   padding: 0.5rem;
   margin-bottom: 1rem;
-}
-.bold {
-  padding-left: 1rem;
-  font-weight: 700;
-}
-.blue {
-  background-color: lightcoral;
+  font-weight: 700
 }
 .red {
+  background-color: lightcoral;
+}
+.blue {
   background-color: lightblue;
+}
+.green {
+  background-color: lightgreen;
 }
