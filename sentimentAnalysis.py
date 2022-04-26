@@ -1,5 +1,4 @@
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
-from termcolor import colored
 import re
 vad = SentimentIntensityAnalyzer()
 
