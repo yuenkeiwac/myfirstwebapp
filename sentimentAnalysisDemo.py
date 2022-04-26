@@ -1,3 +1,4 @@
+from sentimentAnalysis import Prediction
 from load_css import local_css
 import streamlit as st
 import numpy as np
@@ -17,7 +18,8 @@ if readme:
         """)
  
 sentence = st.text_input('Enter a sentence', 'I feel good today')
-score = split_sentence(sentence)
+predict = Prediction()
+score = predict.split_sentence(sentence)
 
 if (score < 0):
     color = 'highlight red'
