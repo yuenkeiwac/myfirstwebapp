@@ -19,6 +19,8 @@ if readme:
  
 sentence = st.text_input('Enter a sentence', 'I feel good today')
 predict = Prediction()
+import nltk
+nltk.download('vader_lexicon')
 score = predict.split_sentence(sentence)
 
 if (score < 0):
