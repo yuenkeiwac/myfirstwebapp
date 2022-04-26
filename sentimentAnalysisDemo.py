@@ -17,7 +17,7 @@ if readme:
         This is a web app demo using [streamlit](https://streamlit.io/) library. It is hosted on [heroku](https://www.heroku.com/). You may get the codes via [github](https://github.com/yuenkeiwac/myfirstwebapp/sentimentAnalysis.py)
         """)
  
-sentence = st.text_input('Enter a sentence', 'I feel good today')
+sentence = st.text_input('Enter a sentence', 'I feel good today', key='1')
 predict = Prediction()
 import nltk
 nltk.download('vader_lexicon')
@@ -34,7 +34,7 @@ else:
     sentiment = 'Neutral'
 
 t = "<div>"+ sentence + "<span class=" + color + ">" + sentiment+ "</span></div>"
-sentence = st.text_input('Enter a sentence', 'I feel good today')
+sentence = st.text_input('Enter a sentence', 'I feel good today', key='2')
 #t = "<div>Hello there my <span class='highlight blue'>name <span class='bold'>yo</span> </span> is <span class='highlight red'>Fanilo <span class='bold'>Name</span></span></div>"
 
 st.markdown(t, unsafe_allow_html=True)
