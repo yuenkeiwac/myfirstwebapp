@@ -20,7 +20,7 @@ class Prediction():
     def Compute_CHIWord_Sentiment(self, sent):
         return predict(sent)
     
-    def split_sentence(self, sent, language):
+    def split_sentence(self, sent):
         score = 0.0
         for word in sent.split():
             score += self.Compute_ENGWord_Sentiment(word)
