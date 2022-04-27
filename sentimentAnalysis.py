@@ -1,6 +1,6 @@
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 #import pysenti
-import bixin
+from bixin import predict
 import re
 vad = SentimentIntensityAnalyzer()
 
