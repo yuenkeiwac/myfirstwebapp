@@ -18,11 +18,19 @@ if readme:
     st.write("""
         This is a web app demo using [streamlit](https://streamlit.io/) library. It is hosted on [heroku](https://www.heroku.com/). You may get the codes via [github](https://github.com/yuenkeiwac/myfirstwebapp/sentimentAnalysis.py)
         """)
+
+option = st.sidebar.selectbox(
+    'Language',
+     ['English','Chinese'])
+
 text = st.empty() 
 sentence = text.text_input('Enter a sentence', '', key='1')
-if(sentence != ''):
+if (sentence != ''):
     predict = Prediction()
-    score = predict.split_sentence(sentence)
+    if (option == 'English'):
+        score = predict.split_sentence(sentence)
+    elif (option == 'Chinese'):
+        score = predict.Compute_CHIWord_Sentiment(sentence)
 
     if (score < 0):
         color = 'highlight red'
@@ -39,16 +47,5 @@ if(sentence != ''):
     #t = "<div>Hello there my <span class='highlight blue'>name <span class='bold'>yo</span> </span> is <span class='highlight red'>Fanilo <span class='bold'>Name</span></span></div>"
 
     st.markdown(t, unsafe_allow_html=True)
-    
-t = "<div>Hello there my <span class='highlight blue'>name <span class='bold'>yo</span> </span> is <span class='highlight red'>Fanilo <span class='bold'>Name</span></span></div>"
-st.write(t) 
-x = "<div>Hello there my <span class='highlight blue'>name <span class='bold'>yo</span> </span> is <span class='highlight red'>Fanilo <span class='bold'>Name</span></span></div>"
-
-sentence = "today is good"
-color = "highlight red"
-sentiment = "positive"
-x = "<div>"+sentence+"<span class="+color + ">" + sentiment+ "</span></div>"
-st.write(x)
-st.markdown(x, unsafe_allow_html=True)
 
     
