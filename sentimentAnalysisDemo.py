@@ -27,6 +27,7 @@ text = st.empty()
 sentence = text.text_input('Enter a sentence', '', key='1')
 if (sentence != ''):
     predict = Prediction()
+    t = ""
     if (option == 'English'):
         score = predict.split_sentence(sentence)
     elif (option == 'Chinese'):
@@ -47,6 +48,5 @@ if (sentence != ''):
     #t = "<div>Hello there my <span class='highlight blue'>name <span class='bold'>yo</span> </span> is <span class='highlight red'>Fanilo <span class='bold'>Name</span></span></div>"
 
     st.markdown(t, unsafe_allow_html=True)
-    t = ""
 
     
