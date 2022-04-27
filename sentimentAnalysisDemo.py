@@ -4,6 +4,8 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import time
+import nltk
+nltk.download('vader_lexicon')
 
 local_css("style.css")
 
@@ -18,25 +20,24 @@ if readme:
         """)
 text = st.empty() 
 sentence = text.text_input('Enter a sentence', '', key='1')
-predict = Prediction()
-import nltk
-nltk.download('vader_lexicon')
-score = predict.split_sentence(sentence)
+if(sentence != ''):
+    predict = Prediction()
+    score = predict.split_sentence(sentence)
 
-if (score < 0):
-    color = 'highlight red'
-    sentiment = 'Negative'
-elif (score > 0):
-    color = 'highlight green'
-    sentiment = 'Positive'
-else:
-    color = 'highlight orange'
-    sentiment = 'Neutral'
+    if (score < 0):
+        color = 'highlight red'
+        sentiment = 'Negative'
+    elif (score > 0):
+        color = 'highlight green'
+        sentiment = 'Positive'
+    else:
+        color = 'highlight orange'
+        sentiment = 'Neutral'
 
-t = "<div>"+ sentence + "<span class=" + color + ">" + sentiment+ "</span></div>"
-sentence = text.text_input('Enter a sentence', '', key='2')
-#t = "<div>Hello there my <span class='highlight blue'>name <span class='bold'>yo</span> </span> is <span class='highlight red'>Fanilo <span class='bold'>Name</span></span></div>"
+    t = "<div>"+ sentence + "<span class=" + color + ">" + sentiment+ "</span></div>"
+    sentence = text.text_input('Enter a sentence', '', key='2')
+    #t = "<div>Hello there my <span class='highlight blue'>name <span class='bold'>yo</span> </span> is <span class='highlight red'>Fanilo <span class='bold'>Name</span></span></div>"
 
-st.markdown(t, unsafe_allow_html=True)
+    st.markdown(t, unsafe_allow_html=True)
 
     
