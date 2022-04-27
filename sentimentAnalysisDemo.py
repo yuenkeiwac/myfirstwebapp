@@ -35,6 +35,7 @@ if option == 'English':
     text = st.empty() 
     sentence = text.text_input('Enter a sentence', '', key='1')
     if sentence != '':
+        score = predict.split_sentence(sentence)
         color, sentiment = predict.returnSentiment(score)
         t = "<div>"+ sentence + "<span class='" + color + "'>   " + sentiment+ "</span></div>"
         #sentence = text.text_input('Enter a sentence', '', key='2')
