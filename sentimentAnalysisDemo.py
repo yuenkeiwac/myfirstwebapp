@@ -26,9 +26,6 @@ option = st.sidebar.selectbox(
 predict = Prediction()
 
 def predictEnglish(sent, lang):
-    if lang == 'English':
-        score = predict.split_sentence(sentence)
-    elif lang == 'Chinese':
     color, sentiment = predict.returnSentiment(score)
     t = "<div>"+ sentence + "<span class='" + color + "'>   " + sentiment+ "</span></div>"
     sentence = text.text_input('Enter a sentence', '', key='2')
