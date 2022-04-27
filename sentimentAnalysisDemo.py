@@ -25,18 +25,19 @@ option = st.sidebar.selectbox(
 
 predict = Prediction()
 
-def predictEnglish(sent):
-    score = predict.split_sentence(sentence)
+def predictEnglish(sent, lang):
+    if lang == 'English':
+        score = predict.split_sentence(sentence)
+    elif lang == 'Chinese':
     color, sentiment = predict.returnSentiment(score)
     t = "<div>"+ sentence + "<span class='" + color + "'>   " + sentiment+ "</span></div>"
     sentence = text.text_input('Enter a sentence', '', key='2')
     st.markdown(t, unsafe_allow_html=True)
-        
+
 if option == 'English':
     text = st.empty() 
     sentence = text.text_input('Enter a sentence', '', key='1')
     if sentence != '':
-        score = predict.split_sentence(sentence)
         color, sentiment = predict.returnSentiment(score)
         t = "<div>"+ sentence + "<span class='" + color + "'>   " + sentiment+ "</span></div>"
         #sentence = text.text_input('Enter a sentence', '', key='2')
@@ -46,7 +47,6 @@ elif option == 'Chinese':
     sentence = text.text_input('Enter a sentence', '', key='1')
     score = predict.Compute_CHIWord_Sentiment(sentence)
     if sentence != '':
-        score = predict.split_sentence(sentence)
         color, sentiment = predict.returnSentiment(score)
         t = "<div>"+ sentence + "<span class='" + color + "'>   " + sentiment+ "</span></div>"
         #sentence = text.text_input('Enter a sentence', '', key='2')
