@@ -43,6 +43,11 @@ if(sentence != ''):
  
 x = "<div>Hello there my <span class='highlight blue'>name <span class='bold'>yo</span> </span> is <span class='highlight red'>Fanilo <span class='bold'>Name</span></span></div>"
 
+sentence = "today is good"
+color = "highlight red"
+sentiment = "positive"
+x = "<div>"+sentence+"<span class="+color + ">" + sentiment+ "</span></div>"
+st.write(x)
 st.markdown(x, unsafe_allow_html=True)
 
     
