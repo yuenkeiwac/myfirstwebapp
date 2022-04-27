@@ -25,6 +25,13 @@ option = st.sidebar.selectbox(
 
 predict = Prediction()
 
+def predictEnglish(sent):
+    score = predict.split_sentence(sentence)
+    color, sentiment = predict.returnSentiment(score)
+    t = "<div>"+ sentence + "<span class='" + color + "'>   " + sentiment+ "</span></div>"
+    sentence = text.text_input('Enter a sentence', '', key='2')
+    st.markdown(t, unsafe_allow_html=True)
+        
 if option == 'English':
     text = st.empty() 
     sentence = text.text_input('Enter a sentence', '', key='1')
@@ -32,7 +39,7 @@ if option == 'English':
         score = predict.split_sentence(sentence)
         color, sentiment = predict.returnSentiment(score)
         t = "<div>"+ sentence + "<span class='" + color + "'>   " + sentiment+ "</span></div>"
-        sentence = text.text_input('Enter a sentence', '', key='2')
+        #sentence = text.text_input('Enter a sentence', '', key='2')
         st.markdown(t, unsafe_allow_html=True)
 elif option == 'Chinese':
     text = st.empty() 
@@ -42,7 +49,7 @@ elif option == 'Chinese':
         score = predict.split_sentence(sentence)
         color, sentiment = predict.returnSentiment(score)
         t = "<div>"+ sentence + "<span class='" + color + "'>   " + sentiment+ "</span></div>"
-        sentence = text.text_input('Enter a sentence', '', key='2')
+        #sentence = text.text_input('Enter a sentence', '', key='2')
         st.markdown(t, unsafe_allow_html=True)
     
 #t = "<div>Hello there my <span class='highlight blue'>name <span class='bold'>yo</span> </span> is <span class='highlight red'>Fanilo <span class='bold'>Name</span></span></div>"
