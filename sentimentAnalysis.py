@@ -1,5 +1,6 @@
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
-import pysenti
+#import pysenti
+import bixin
 import re
 vad = SentimentIntensityAnalyzer()
 
@@ -18,7 +19,8 @@ class Prediction():
         return polarity_value
 
     def Compute_CHIWord_Sentiment(self, sent):
-        return pysenti.classify(sent)['score']
+        return predict(sent)
+        #return pysenti.classify(sent)['score']
     
     def split_sentence(self, sent):
         score = 0.0
