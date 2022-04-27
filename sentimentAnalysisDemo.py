@@ -28,19 +28,22 @@ predict = Prediction()
 if option == 'English':
     text = st.empty() 
     sentence = text.text_input('Enter a sentence', '', key='1')
-    score = predict.split_sentence(sentence)
-    color, sentiment = predict.returnSentiment(score)
-    t = "<div>"+ sentence + "<span class='" + color + "'>   " + sentiment+ "</span></div>"
-    sentence = text.text_input('Enter a sentence', '', key='2')
-    st.markdown(t, unsafe_allow_html=True)
+    if sentence != '':
+        score = predict.split_sentence(sentence)
+        color, sentiment = predict.returnSentiment(score)
+        t = "<div>"+ sentence + "<span class='" + color + "'>   " + sentiment+ "</span></div>"
+        sentence = text.text_input('Enter a sentence', '', key='2')
+        st.markdown(t, unsafe_allow_html=True)
 elif option == 'Chinese':
     text = st.empty() 
     sentence = text.text_input('Enter a sentence', '', key='1')
     score = predict.Compute_CHIWord_Sentiment(sentence)
-    color, sentiment = predict.returnSentiment(score)
-    t = "<div>"+ sentence + "<span class='" + color + "'>   " + sentiment+ "</span></div>"
-    sentence = text.text_input('Enter a sentence', '', key='2')
-    st.markdown(t, unsafe_allow_html=True)
+    if sentence != '':
+        score = predict.split_sentence(sentence)
+        color, sentiment = predict.returnSentiment(score)
+        t = "<div>"+ sentence + "<span class='" + color + "'>   " + sentiment+ "</span></div>"
+        sentence = text.text_input('Enter a sentence', '', key='2')
+        st.markdown(t, unsafe_allow_html=True)
     
 #t = "<div>Hello there my <span class='highlight blue'>name <span class='bold'>yo</span> </span> is <span class='highlight red'>Fanilo <span class='bold'>Name</span></span></div>"
 
