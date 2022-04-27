@@ -25,3 +25,15 @@ class Prediction():
         for word in sent.split():
             score += self.Compute_ENGWord_Sentiment(word)
         return score
+    
+    def returnSentiment(self, score):
+        if (score < 0):
+            color = 'highlight red'
+            sentiment = 'Negative'
+        elif (score > 0):
+            color = 'highlight green'
+            sentiment = 'Positive'
+        else:
+            color = 'highlight orange'
+            sentiment = 'Neutral'
+        return color, sentiment
